@@ -1,0 +1,692 @@
+@media (min-width: 280px) {
+    @font-face {
+        font-family: "Genos";
+        src: url("../fonts/Genos-Light.ttf");
+    }
+
+    body {
+        background-color: rgb(233, 233, 233);
+        font-family:'Courier New', Courier, monospace;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        height: 120px;
+        width: 97.5vw;
+    }
+    
+    h1 {
+        text-align: left;
+        font-family: "Genos";
+        font-size: 1.5rem;
+        padding-top: 20px;
+        padding-left: 50px;
+        margin-top: 0;
+        text-shadow: 1px 1px 2px white, 0 0 25px gray, 0 0 5px darkgray;
+    }
+
+    /* Menú nav desplegable */
+    nav {
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+        text-align: center;
+        height: 37px;
+        width: 97.5vw;
+    }
+    
+    #menu ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+        display:flex;
+    }
+
+    #menu ul a {
+        display:block;
+        color:#fff;
+        text-decoration:none;
+        font-weight:400;
+        font-size:10px;
+        padding:10px;
+        font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        width: calc(85.9vw /6);
+    }
+
+    #menu ul li {
+        position:relative;
+        float:left;
+        margin:0;
+        padding:0;
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+    }
+
+    #menu ul li:hover {
+        background:rgb(126, 125, 125);
+    }
+
+    aside {
+        background: url(../img/fondowebpersonal.jpeg);
+        background-size: 97.5vw 350px;
+        background-repeat: no-repeat;
+        width: 97.5vw;
+        height: 350px;
+        color: black;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .jt {
+        position: relative;
+        font-size: 6vmin;
+        font-family: 'Genos';
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgb(255, 133, 133);
+        margin-top: 39px;
+    }
+
+    .jt__row {
+        display: block;
+    }
+    .jt__row:nth-child(1) {
+        clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+    }
+    .jt__row:nth-child(2) {
+        clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+    }
+    .jt__row:nth-child(3) {
+        clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+    }
+    .jt__row:nth-child(4) {
+        clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+    }
+
+    .jt__row.jt__row--sibling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        width:800px;
+    }
+
+    .jt__text {
+        display: block;
+        transform-origin: bottom left;
+        animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+    }
+    .jt__row:nth-child(1) .jt__text {
+        transform: translateY(-0.1em);
+    }
+    .jt__row:nth-child(2) .jt__text {
+        transform: translateY(-0.3em) scaleY(1.1);
+    }
+    .jt__row:nth-child(3) .jt__text {
+        transform: translateY(-0.5em) scaleY(1.2) ;
+    }
+    .jt__row:nth-child(4) .jt__text {
+        transform: translateY(-0.7em) scaleY(1.3) ;
+    }
+    .jt__row:nth-child(5) .jt__text {
+        transform: translateY(-0.9em) scaleY(1.4) ;
+    }
+    .jt__row:nth-child(6) .jt__text {
+        transform: translateY(-1.1em) scaleY(1.5) ;
+    }
+
+    @keyframes moveIn {
+        50%, 100% { 
+            transform: translateY(0em)
+        }
+        0%   { 
+        opacity: 0; 
+        filter: blur(10px);
+        
+        }
+        100% { 
+        opacity: 1; 
+        filter: blur(0px);
+        }
+    }
+
+    .debug .jt__row:nth-child(even) {
+        color: black;
+        background: white;
+    }
+    .debug .jt__row:nth-child(odd) {
+        color: white;
+        background: black;
+    }
+
+    section {
+        width: 97.5vw;
+        background-color: black;
+        margin-top: 8px;
+    }
+
+    .contenedor {
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "vistaprevia captura"
+            "descripcion captura";
+    }
+
+    .vistaprevia { 
+        grid-area: vistaprevia;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+        background-color: white;
+    }
+    .descripcion { 
+        grid-area: descripcion;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .captura { 
+        grid-area: captura;
+        background-color: white;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .imgprevia {
+        height: 100%;
+        width: 100%;
+    }
+    .imgcaptura {
+        height: 100%;
+        width: 100%;
+    }
+
+    p {
+        text-align: left;
+        padding-left: 100px;
+        font-size: 1rem;
+    }
+
+    footer {
+        clear:both;
+        margin-top: 8px;
+        width:97.5vw;
+        height:200px;
+        background-image: linear-gradient(rgb(61, 61, 61), gray);
+        color: white;
+        padding-top:50px;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .rrss {
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    @font-face {
+        font-family: "Genos";
+        src: url("../fonts/Genos-Light.ttf");
+    }
+
+    body {
+        background-color: rgb(233, 233, 233);
+        font-family:'Courier New', Courier, monospace;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        height: 120px;
+        width: 97.5vw;
+    }
+    
+    h1 {
+        text-align: left;
+        font-family: "Genos";
+        font-size: 2.2rem;
+        padding-top: 20px;
+        padding-left: 50px;
+        margin-top: 0;
+        text-shadow: 1px 1px 2px white, 0 0 25px gray, 0 0 5px darkgray;
+    }
+
+    /* Menú nav desplegable */
+    nav {
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+        text-align: center;
+        height: 37px;
+        width: 97.5vw;
+    }
+    
+    #menu ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+        display:flex;
+    }
+
+    #menu ul a {
+        display:block;
+        color:#fff;
+        text-decoration:none;
+        font-weight:400;
+        font-size:12px;
+        padding:10px;
+        font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        width: calc(85.9vw/6);
+    }
+
+    #menu ul li {
+        position:relative;
+        float:left;
+        margin:0;
+        padding:0;
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+    }
+
+    #menu ul li:hover {
+        background:rgb(126, 125, 125);
+    }
+
+    aside {
+        background: url(../img/fondowebpersonal.jpeg);
+        background-size: 97.5vw 350px;
+        background-repeat: no-repeat;
+        width: 97.5vw;
+        height: 350px;
+        color: black;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .jt {
+        position: relative;
+        font-size: 8vmin;
+        font-family: 'Genos';
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgb(255, 133, 133);
+        margin-top: 39px;
+    }
+
+    .jt__row {
+        display: block;
+    }
+    .jt__row:nth-child(1) {
+        clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+    }
+    .jt__row:nth-child(2) {
+        clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+    }
+    .jt__row:nth-child(3) {
+        clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+    }
+    .jt__row:nth-child(4) {
+        clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+    }
+
+    .jt__row.jt__row--sibling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        width:800px;
+    }
+
+    .jt__text {
+        display: block;
+        transform-origin: bottom left;
+        animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+    }
+    .jt__row:nth-child(1) .jt__text {
+        transform: translateY(-0.1em);
+    }
+    .jt__row:nth-child(2) .jt__text {
+        transform: translateY(-0.3em) scaleY(1.1);
+    }
+    .jt__row:nth-child(3) .jt__text {
+        transform: translateY(-0.5em) scaleY(1.2) ;
+    }
+    .jt__row:nth-child(4) .jt__text {
+        transform: translateY(-0.7em) scaleY(1.3) ;
+    }
+    .jt__row:nth-child(5) .jt__text {
+        transform: translateY(-0.9em) scaleY(1.4) ;
+    }
+    .jt__row:nth-child(6) .jt__text {
+        transform: translateY(-1.1em) scaleY(1.5) ;
+    }
+
+    @keyframes moveIn {
+        50%, 100% { 
+            transform: translateY(0em)
+        }
+        0%   { 
+        opacity: 0; 
+        filter: blur(10px);
+        
+        }
+        100% { 
+        opacity: 1; 
+        filter: blur(0px);
+        }
+    }
+
+    .debug .jt__row:nth-child(even) {
+        color: black;
+        background: white;
+    }
+    .debug .jt__row:nth-child(odd) {
+        color: white;
+        background: black;
+    }
+
+    section {
+        width: 97.5vw;
+        background-color: black;
+        margin-top: 8px;
+    }
+
+    .contenedor {
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "vistaprevia captura"
+            "descripcion captura";
+    }
+
+    .vistaprevia { 
+        grid-area: vistaprevia;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+        background-color: white;
+    }
+    .descripcion { 
+        grid-area: descripcion;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .captura { 
+        grid-area: captura;
+        background-color: white;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .imgprevia {
+        height: 100%;
+        width: 100%;
+    }
+    .imgcaptura {
+        height: 100%;
+        width: 100%;
+    }
+
+    p {
+        text-align: left;
+        padding-left: 100px;
+        font-size: 1.4rem;
+    }
+
+    footer {
+        clear:both;
+        margin-top: 8px;
+        width:97.5vw;
+        height:200px;
+        background-image: linear-gradient(rgb(61, 61, 61), gray);
+        color: white;
+        padding-top:50px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .rrss {
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 998px) {
+    @font-face {
+        font-family: "Genos";
+        src: url("../fonts/Genos-Light.ttf");
+    }
+
+    body {
+        background-color: rgb(233, 233, 233);
+        font-family:'Courier New', Courier, monospace;
+    }
+
+    header {
+        background-color: black;
+        color: white;
+        height: 120px;
+        width: 97.5vw;
+    }
+    
+    h1 {
+        text-align: left;
+        font-family: "Genos";
+        font-size: 3rem;
+        padding-top: 20px;
+        padding-left: 50px;
+        margin-top: 0;
+        text-shadow: 1px 1px 2px white, 0 0 25px gray, 0 0 5px darkgray;
+    }
+
+    /* Menú nav desplegable */
+    nav {
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+        text-align: center;
+        height: 37px;
+        width: 97.5vw;
+    }
+    
+    #menu ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+        display:flex;
+    }
+
+    #menu ul a {
+        display:block;
+        color:#fff;
+        text-decoration:none;
+        font-weight:400;
+        font-size:15px;
+        padding:10px;
+        font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        width: calc(85.9vw/6);
+    }
+
+    #menu ul li {
+        position:relative;
+        float:left;
+        margin:0;
+        padding:0;
+        background-image: linear-gradient(gray, rgb(61, 61, 61));
+    }
+
+    #menu ul li:hover {
+        background:rgb(126, 125, 125);
+    }
+
+    aside {
+        background: url(../img/fondowebpersonal.jpeg);
+        background-size: 97.5vw 350px;
+        background-repeat: no-repeat;
+        width: 97.5vw;
+        height: 350px;
+        color: black;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    .jt {
+        position: relative;
+        font-size: 13vmin;
+        font-family: 'Genos';
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgb(255, 133, 133);
+        margin-top: 39px;
+    }
+
+    .jt__row {
+        display: block;
+    }
+    .jt__row:nth-child(1) {
+        clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+    }
+    .jt__row:nth-child(2) {
+        clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+    }
+    .jt__row:nth-child(3) {
+        clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+    }
+    .jt__row:nth-child(4) {
+        clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+    }
+
+    .jt__row.jt__row--sibling {
+        position: absolute;
+        top: 0;
+        left: 0;
+        user-select: none;
+        width:800px;
+    }
+
+    .jt__text {
+        display: block;
+        transform-origin: bottom left;
+        animation: moveIn 2s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+    }
+    .jt__row:nth-child(1) .jt__text {
+        transform: translateY(-0.1em);
+    }
+    .jt__row:nth-child(2) .jt__text {
+        transform: translateY(-0.3em) scaleY(1.1);
+    }
+    .jt__row:nth-child(3) .jt__text {
+        transform: translateY(-0.5em) scaleY(1.2) ;
+    }
+    .jt__row:nth-child(4) .jt__text {
+        transform: translateY(-0.7em) scaleY(1.3) ;
+    }
+    .jt__row:nth-child(5) .jt__text {
+        transform: translateY(-0.9em) scaleY(1.4) ;
+    }
+    .jt__row:nth-child(6) .jt__text {
+        transform: translateY(-1.1em) scaleY(1.5) ;
+    }
+
+    @keyframes moveIn {
+        50%, 100% { 
+            transform: translateY(0em)
+        }
+        0%   { 
+        opacity: 0; 
+        filter: blur(10px);
+        
+        }
+        100% { 
+        opacity: 1; 
+        filter: blur(0px);
+        }
+    }
+
+    .debug .jt__row:nth-child(even) {
+        color: black;
+        background: white;
+    }
+    .debug .jt__row:nth-child(odd) {
+        color: white;
+        background: black;
+    }
+
+    section {
+        width: 97.5vw;
+        background-color: black;
+        margin-top: 8px;
+    }
+
+    .contenedor {
+        display: grid; 
+        grid-template-columns: 30% 70%; 
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "vistaprevia captura"
+            "descripcion captura";
+    }
+
+    .vistaprevia { 
+        grid-area: vistaprevia;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+        background-color: white;
+    }
+    .descripcion { 
+        grid-area: descripcion;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .captura { 
+        grid-area: captura;
+        background-color: white;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+    }
+    .imgprevia {
+        height: 100%;
+        width: 100%;
+    }
+    .imgcaptura {
+        height: 100%;
+        width: 100%;
+    }
+
+    p {
+        text-align: left;
+        padding-left: 100px;
+        font-size: 1.8rem;
+    }
+
+    footer {
+        clear:both;
+        margin-top: 8px;
+        width:97.5vw;
+        height:200px;
+        background-image: linear-gradient(rgb(61, 61, 61), gray);
+        color: white;
+        padding-top:50px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .rrss {
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+    }
+}
